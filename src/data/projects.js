@@ -170,33 +170,34 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'Dynamics 365 / Power Automate Renewal Workflow',
+    title: 'Dynamics 365 Renewal Record Automation',
     category: 'Automation',
     image: publicAsset('project-placeholder.svg'),
     tech: ['Power Automate', 'Dynamics 365 Field Service', 'Dataverse', 'Excel'],
     description:
-      'A renewal-tracking workflow to support license renewal monitoring, reminders, and reporting.',
+      'A centralised license-renewal system with daily expiry tracking, automated Sales reminders, and validated Excel imports.',
+    renewalAutomation: {
+      workflows: 2,
+      reminderDays: [90, 60, 30],
+    },
     features: [
-      'Renewal date tracking',
-      'Dataverse workflow support',
-      'Required-field and duplicate-record troubleshooting',
-      'Automated reminder process',
+      'Daily agreement-expiry tracking and status updates',
+      'Automated 90, 60, and 30-day Sales reminders',
+      'Validated Excel-to-Dynamics agreement imports',
+      'Duplicate prevention and lookup-record mapping',
     ],
-    demoUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: 'https://github.com/ChakonSukkho',
     caseStudy: {
       problem:
-        'License renewal information needed better tracking, reminder support, and troubleshooting across Dynamics 365, Dataverse, Excel, and Power Automate.',
+        'The Sales team relied on manually checking Excel files for customer agreement and license renewals. Records were not centralised, upcoming expiries could be missed, repeated entry increased errors, and inconsistent Excel formats made migration into Dynamics 365 difficult.',
       solution:
-        'Supported workflow creation and issue resolution for renewal records, required fields, duplicate records, and automated reminder logic.',
+        'I configured the Dynamics 365 Field Service Agreement table around the Sales team’s working process and developed two Power Automate workflows. The first runs daily, calculates days to expiry, updates renewal status, and sends one-time 90, 60, 30-day or expired notifications. The second validates Excel rows, resolves Dynamics lookup IDs, converts serial dates, detects existing agreement numbers, and creates clean agreement records.',
       techStack: 'Power Automate, Dynamics 365 Field Service, Dataverse, Excel',
       features:
-        'Renewal date tracking, reminder process, workflow support, field validation, duplicate-record checks, and reporting support.',
+        'Custom Agreement fields and form sections; daily scheduled tracking; Active, 90-day, 60-day, 30-day, and Expired statuses; reminder flags that prevent duplicate emails; customer and agreement lookup mapping; Excel date conversion; required-field validation; duplicate agreement-number checks; skipped-row handling.',
       role:
-        'Troubleshot Power Automate flows, verified records, checked required fields, documented issues, and supported workflow improvements.',
+        'I gathered requirements from the Sales team, mapped Excel columns to Dynamics fields, cleaned and validated source data, customised the Agreement form, built both workflows, configured reminder and import logic, and tested valid, empty, duplicate, expired, missing-lookup, and invalid-date scenarios.',
       outcome:
-        'Helped improve renewal visibility and reduced manual tracking issues through a clearer automation workflow.',
+        'Renewal records were centralised in Dynamics 365, existing Excel agreements could be imported with less manual entry, upcoming expiries became visible automatically, and Sales received timely reminders. Both workflows were configured and tested successfully while reducing duplicate records and repetitive checking.',
     },
   },
   {

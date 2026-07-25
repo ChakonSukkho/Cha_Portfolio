@@ -102,6 +102,25 @@ function CaseStudyModal({ project, onClose }) {
                 </div>
               )}
 
+              {project.renewalAutomation && (
+                <div className="mb-6 grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-3xl border border-cyan-300/15 bg-cyan-300/[0.06] p-5">
+                    <p className="text-3xl font-black text-cyan-200">{project.renewalAutomation.workflows}</p>
+                    <p className="mt-1 text-sm font-semibold text-slate-300">Power Automate workflows</p>
+                  </div>
+                  <div className="rounded-3xl border border-cyan-300/15 bg-cyan-300/[0.06] p-5">
+                    <p className="text-3xl font-black text-cyan-200">Daily</p>
+                    <p className="mt-1 text-sm font-semibold text-slate-300">Automated expiry tracking</p>
+                  </div>
+                  <div className="rounded-3xl border border-emerald-300/15 bg-emerald-300/[0.06] p-5">
+                    <p className="text-3xl font-black text-emerald-300">
+                      {project.renewalAutomation.reminderDays.join(' / ')}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-slate-300">Day renewal reminders</p>
+                  </div>
+                </div>
+              )}
+
               <div className="mb-6 flex flex-wrap gap-2" aria-label="Technology stack">
                 {project.tech.map((tech) => (
                   <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/[0.07] px-3 py-1.5 text-xs font-semibold text-cyan-100">

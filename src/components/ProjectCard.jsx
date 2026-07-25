@@ -28,6 +28,26 @@ function ProjectCard({ project, index, onOpenCaseStudy }) {
               <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">After</p>
             </div>
           </div>
+        ) : project.renewalAutomation ? (
+          <div className="flex h-full flex-col justify-center bg-gradient-to-br from-slate-900 via-blue-950/55 to-cyan-950/40 px-7">
+            <div className="flex items-center justify-between gap-3">
+              {['Excel', 'Dynamics 365', 'Sales team'].map((step, stepIndex) => (
+                <div key={step} className="contents">
+                  <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/55 px-3 py-3 text-center text-xs font-bold text-cyan-100 sm:px-4">
+                    {step}
+                  </div>
+                  {stepIndex < 2 && <span className="text-xl font-black text-cyan-300" aria-hidden="true">→</span>}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex justify-center gap-2">
+              {project.renewalAutomation.reminderDays.map((days) => (
+                <span key={days} className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-200">
+                  {days}-day reminder
+                </span>
+              ))}
+            </div>
+          </div>
         ) : (
           <img
             src={project.image}
