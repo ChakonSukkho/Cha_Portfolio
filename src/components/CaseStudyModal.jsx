@@ -85,6 +85,23 @@ function CaseStudyModal({ project, onClose }) {
             </header>
 
             <div className="overflow-y-auto p-5 sm:p-7">
+              {project.scoreImprovement && (
+                <div className="mb-6 grid gap-3 rounded-3xl border border-emerald-300/20 bg-gradient-to-r from-amber-300/[0.06] to-emerald-300/[0.08] p-5 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:px-7">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Before optimisation</p>
+                    <p className="mt-1 text-4xl font-black text-amber-300">{project.scoreImprovement.before}%</p>
+                  </div>
+                  <span className="hidden text-2xl font-black text-cyan-300 sm:block" aria-hidden="true">→</span>
+                  <div className="sm:text-right">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">After optimisation</p>
+                    <p className="mt-1 text-4xl font-black text-emerald-300">{project.scoreImprovement.after}%</p>
+                  </div>
+                  <p className="text-sm leading-6 text-slate-300 sm:col-span-3">
+                    On-page SEO audit score increased by {project.scoreImprovement.after - project.scoreImprovement.before} percentage points after the improvements.
+                  </p>
+                </div>
+              )}
+
               <div className="mb-6 flex flex-wrap gap-2" aria-label="Technology stack">
                 {project.tech.map((tech) => (
                   <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/[0.07] px-3 py-1.5 text-xs font-semibold text-cyan-100">

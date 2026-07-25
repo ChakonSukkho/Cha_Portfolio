@@ -235,30 +235,31 @@ export const projects = [
     title: 'WordPress Website & SEO Improvement',
     category: 'CMS / SEO',
     image: publicAsset('project-placeholder.svg'),
-    tech: ['WordPress', 'AIOSEO', 'Google Analytics', 'SEMrush'],
+    tech: ['WordPress', 'HTML', 'CSS', 'JavaScript', 'JSON', 'SEMrush', 'Seobility'],
     description:
-      'Website maintenance and SEO improvement work for content, metadata, page structure, headings, and internal links.',
+      'Corporate WordPress enhancement combining on-page SEO, content updates, new page development, and product-section troubleshooting.',
+    scoreImprovement: {
+      before: 61,
+      after: 92,
+    },
     features: [
-      'SEO content improvement',
-      'Website layout maintenance',
-      'Google Analytics setup',
-      'SEMrush review support',
+      'Raised the on-page SEO audit score from 61% to 92%',
+      'Improved titles, metadata, headings, alt text, and internal links',
+      'Created and updated responsive WordPress pages',
+      'Fixed product details using JSON and JavaScript troubleshooting',
     ],
-    demoUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: 'https://github.com/ChakonSukkho',
     caseStudy: {
       problem:
-        'Website content and structure needed SEO improvements, better metadata, page checks, and analytics visibility.',
+        'The corporate website had multiple SEO warnings, incomplete titles and descriptions, outdated content, and missing pages. A product section also failed to display the correct details because of issues in its data mapping and interaction logic.',
       solution:
-        'Supported WordPress content updates, SEO review, metadata improvement, heading structure checks, internal links, and analytics setup.',
-      techStack: 'WordPress, AIOSEO, Google Analytics, SEMrush',
+        'I audited the website with SEMrush, Seobility, and on-page analysis tools, then prioritised recurring issues. I improved page titles, meta descriptions, heading hierarchy, image alt text, content readability, URLs, and internal links. I also built new WordPress pages and corrected the JSON and JavaScript logic that connected selected products to their detail pop-ups.',
+      techStack: 'WordPress, HTML, CSS, JavaScript, JSON, SEMrush, Seobility, SEO audit tools, browser developer tools',
       features:
-        'SEO content improvement, metadata checks, heading review, layout maintenance, analytics setup, and SEMrush review support.',
+        'Multi-tool SEO auditing; title and metadata optimisation; logical H1-H3 structure; image and content optimisation; internal-link improvements; responsive WordPress page creation; product data-mapping repair; desktop and mobile testing; post-implementation SEO audit.',
       role:
-        'Maintained WordPress pages, reviewed SEO suggestions, updated content, checked analytics setup, and documented improvements.',
+        'I conducted the audits, reviewed and prioritised recommendations, implemented on-page SEO changes, updated corporate content, created new pages, maintained design consistency, troubleshot the product section, corrected its JSON/JavaScript mapping, and tested the completed work across screen sizes.',
       outcome:
-        'Improved website quality, SEO readiness, and visibility into website performance through analytics and review tools.',
+        'The on-page SEO score increased from 61% to 92%. The website gained clearer structure and metadata, more accurate and readable content, working product-detail pop-ups, consistent new pages, and a more reliable experience on desktop and mobile.',
     },
   },
 ];

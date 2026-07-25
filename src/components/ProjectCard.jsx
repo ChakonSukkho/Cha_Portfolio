@@ -11,12 +11,30 @@ function ProjectCard({ project, index, onOpenCaseStudy }) {
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.48, delay: index * 0.04 }}
     >
-      <div className="relative overflow-hidden">
-        <img
-          src={project.image}
-          alt={`${project.title} homepage preview`}
-          className="h-56 w-full object-cover opacity-90 transition duration-500 group-hover:scale-105"
-        />
+      <div className="relative h-56 overflow-hidden">
+        {project.scoreImprovement ? (
+          <div className="flex h-full items-center justify-center gap-5 bg-gradient-to-br from-slate-900 via-blue-950/50 to-cyan-950/40 px-6">
+            <div className="text-center">
+              <div className="grid h-24 w-24 place-items-center rounded-full border-[9px] border-amber-300/70 bg-slate-950/60 text-2xl font-black text-white">
+                {project.scoreImprovement.before}%
+              </div>
+              <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Before</p>
+            </div>
+            <span className="text-3xl font-black text-cyan-300" aria-hidden="true">→</span>
+            <div className="text-center">
+              <div className="grid h-24 w-24 place-items-center rounded-full border-[9px] border-emerald-400/80 bg-slate-950/60 text-2xl font-black text-white shadow-glow">
+                {project.scoreImprovement.after}%
+              </div>
+              <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">After</p>
+            </div>
+          </div>
+        ) : (
+          <img
+            src={project.image}
+            alt={`${project.title} homepage preview`}
+            className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/15 to-transparent" aria-hidden="true" />
         <span className="absolute left-5 top-5 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-bold text-cyan-100">
           {project.category}
@@ -45,15 +63,17 @@ function ProjectCard({ project, index, onOpenCaseStudy }) {
         </ul>
 
         <div className="mt-auto flex flex-wrap gap-3 pt-6">
-          <a
-            href={project.demoUrl}
-            target={project.demoUrl === '#' ? undefined : '_blank'}
-            rel={project.demoUrl === '#' ? undefined : 'noreferrer'}
-            className="secondary-button px-4 py-2 text-xs"
-            aria-label={`View demo for ${project.title}`}
-          >
-            View Demo <FaExternalLinkAlt />
-          </a>
+          {project.demoUrl && project.demoUrl !== '#' && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="secondary-button px-4 py-2 text-xs"
+              aria-label={`View demo for ${project.title}`}
+            >
+              View Demo <FaExternalLinkAlt />
+            </a>
+          )}
           <button
             type="button"
             onClick={() => onOpenCaseStudy(project)}
@@ -62,15 +82,17 @@ function ProjectCard({ project, index, onOpenCaseStudy }) {
           >
             Case Study <FaBookOpen />
           </button>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="secondary-button px-4 py-2 text-xs"
-            aria-label={`Open GitHub for ${project.title}`}
-          >
-            GitHub <FaGithub />
-          </a>
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="secondary-button px-4 py-2 text-xs"
+              aria-label={`Open GitHub for ${project.title}`}
+            >
+              GitHub <FaGithub />
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
