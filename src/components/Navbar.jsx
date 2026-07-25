@@ -46,31 +46,16 @@ function Navbar() {
       }`}
     >
       <nav
-        className="section-container flex h-28 items-center justify-between"
+        className="section-container flex h-24 items-center justify-between"
         aria-label="Main navigation"
       >
-        {/* Logo */}
-        <a
-          href="#home"
-          className="group inline-flex items-center gap-4"
-          onClick={closeMenu}
-        >
-          <span className="grid h-14 w-14 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-lg font-black text-cyan-200 shadow-glow transition group-hover:scale-105">
-            CE
-          </span>
-
-          <span className="hidden text-lg font-bold tracking-[0.22em] text-white sm:block">
-            CHAKON
-          </span>
-        </a>
-
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-6 py-3 text-base font-semibold text-slate-300 transition hover:bg-white/5 hover:text-cyan-200"
+              className="rounded-full px-4 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5 hover:text-cyan-200 xl:px-5 xl:text-base"
             >
               {link.label}
             </a>
