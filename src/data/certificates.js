@@ -1,3 +1,88 @@
-// Add certificate entries here when the credential details are available.
-// Supported fields: title, issuer, issued, credentialUrl, image, and skills.
-export const certificates = [];
+const certificatePath = (fileName) => encodeURI(`/MyCert/${fileName}`);
+
+export const certificates = [
+  {
+    title: 'APAC Cybersecurity Fund 2025',
+    issuer: 'APAC Cybersecurity Fund',
+    issued: '2025',
+    credentialUrl: certificatePath('APAC-cybersecurity-Fund-2025-certificate.pdf'),
+    skills: ['Cybersecurity'],
+  },
+  {
+    title: 'Achieving the Mindset for Success',
+    issuer: 'HRD Corp',
+    issued: 'Professional Development',
+    credentialUrl: certificatePath('HRDF - Achieving the Mindset for Success - Chakon.pdf'),
+    skills: ['Growth Mindset', 'Personal Development'],
+  },
+  {
+    title: 'Enhance Your Interpersonal Skills in Communication',
+    issuer: 'HRD Corp',
+    issued: 'Professional Development',
+    credentialUrl: certificatePath('HRDF_Enhance_Your_Interpersonal_Skills_in_Communication_1_Chakon.pdf'),
+    skills: ['Communication', 'Interpersonal Skills'],
+  },
+  {
+    title: 'Mastering Conflict Management',
+    issuer: 'HRD Corp',
+    issued: 'Professional Development',
+    credentialUrl: certificatePath('HRDF_Mastering_Conflict_Management_To_Deal_With_Irate_Customer_Chakon.pdf'),
+    skills: ['Conflict Management', 'Customer Service'],
+  },
+  {
+    title: 'Basics of Psychology',
+    issuer: 'HRD Corp',
+    issued: 'Professional Development',
+    credentialUrl: certificatePath('HRDR Certificate - Basics of Psychology - CHAKON.pdf'),
+    skills: ['Psychology', 'People Skills'],
+  },
+  {
+    title: 'Boost Your Professional English Skills',
+    issuer: 'HRD Corp',
+    issued: 'Professional Development',
+    credentialUrl: certificatePath('HRDR_Certificate_Boost_Your_English_Skills_to_Sounding_More_Professional.pdf'),
+    skills: ['English', 'Professional Communication'],
+  },
+  {
+    title: 'IBM Design Certificate',
+    issuer: 'IBM',
+    issued: '2026',
+    credentialUrl: certificatePath('IBMDesign20260213-34-ivqb4p.pdf'),
+    skills: ['Design Thinking', 'Problem Solving'],
+  },
+  {
+    title: 'Sales & Customer Experience',
+    issuer: 'Professional Development',
+    issued: '2025',
+    credentialUrl: certificatePath('Recognition_of_Completion_2025_for_Sales_Customer_Experience_course.pdf'),
+    skills: ['Sales', 'Customer Experience'],
+  },
+  {
+    title: 'Workflow Specialist',
+    issuer: 'Bintara Solutions',
+    issued: 'Professional Certification',
+    credentialUrl: certificatePath('Workflow_Specialist_Certificate_•_Chakon_Bintara_•_Collaborative.html'),
+    skills: ['Workflow Automation', 'Collaboration'],
+  },
+  {
+    title: 'Microsoft Teams Solution Technical Course',
+    issuer: 'Yealink',
+    issued: 'Technical Certification',
+    credentialUrl: certificatePath('YTST01023922Yealink_Microsoft_Teams_Solution_Technical_Course.pdf'),
+    skills: ['Microsoft Teams', 'Yealink Solutions'],
+  },
+  {
+    title: 'ZSA Foundations',
+    issuer: 'Zoom',
+    issued: 'Professional Certification',
+    credentialUrl: certificatePath('ZSA Foundations Certificate - CHAKON.pdf'),
+    skills: ['Zoom', 'Solution Fundamentals'],
+  },
+  {
+    title: 'ZSA Phone',
+    issuer: 'Zoom',
+    issued: 'Professional Certification',
+    credentialUrl: certificatePath('ZSA Phone Certificate - CHAKON.pdf'),
+    skills: ['Zoom Phone', 'Cloud Communications'],
+  },
+];
