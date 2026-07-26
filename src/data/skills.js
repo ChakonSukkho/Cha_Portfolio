@@ -55,9 +55,9 @@ export const skillCategories = [
     description: 'Server-side logic, API integration, authentication, and access control workflows.',
     skills: [
       { name: 'PHP', icon: FaPhp, color: '#777BB4' },
-      { name: 'Flask', icon: SiFlask, color: '#FFFFFF' },
+      { name: 'Flask', icon: SiFlask, color: '#FFFFFF', lightColor: '#111827' },
       { name: 'Node.js', icon: FaNodeJs, color: '#5FA04E' },
-      { name: 'Express.js', icon: SiExpress, color: '#FFFFFF' },
+      { name: 'Express.js', icon: SiExpress, color: '#FFFFFF', lightColor: '#111827' },
       { name: 'REST API', icon: FaLink, color: '#FF6C37' },
       { name: 'Authentication', icon: FaKey, color: '#F6C344' },
       { name: 'RBAC', icon: FaUserShield, color: '#22C55E' },
@@ -79,10 +79,10 @@ export const skillCategories = [
     description: 'Deployment, hosting support, version control, and application release workflows.',
     skills: [
       { name: 'Azure', icon: FaMicrosoft, color: '#0078D4' },
-      { name: 'Vercel', icon: SiVercel, color: '#FFFFFF' },
+      { name: 'Vercel', icon: SiVercel, color: '#FFFFFF', lightColor: '#111827' },
       { name: 'Render', icon: FaCloud, color: '#46E3B7' },
       { name: 'cPanel', icon: FaServer, color: '#FF6C2C' },
-      { name: 'GitHub', icon: FaGithub, color: '#FFFFFF' },
+      { name: 'GitHub', icon: FaGithub, color: '#FFFFFF', lightColor: '#181717' },
     ],
   },
   {
