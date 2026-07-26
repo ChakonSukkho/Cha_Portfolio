@@ -421,13 +421,13 @@ function ThreeLanyardCard() {
 
   return (
     <div
-      className="relative mx-auto h-[560px] w-full max-w-md cursor-grab select-none active:cursor-grabbing sm:h-[700px] lg:h-[760px]"
+      className="relative mx-auto h-[clamp(30rem,145vw,35rem)] w-full max-w-md cursor-grab select-none touch-pan-y active:cursor-grabbing sm:h-[43.75rem] lg:h-[47.5rem]"
       aria-label="Interactive Three.js developer ID lanyard for CHAKON A/L EH CHEH"
     >
       <div className="absolute inset-10 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true" />
       <div className="absolute bottom-16 left-1/2 h-20 w-2/3 -translate-x-1/2 rounded-full bg-blue-500/15 blur-2xl" aria-hidden="true" />
       <div ref={mountRef} className="relative z-10 h-full w-full" />
-      <p className="badge-drag-hint pointer-events-none absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-center text-xs font-semibold text-slate-400 backdrop-blur-md">
+      <p className="badge-drag-hint pointer-events-none absolute bottom-3 left-1/2 z-20 w-max max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-center text-xs font-semibold text-slate-400 backdrop-blur-md">
         Move or drag the badge
       </p>
     </div>

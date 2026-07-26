@@ -46,16 +46,23 @@ function Navbar() {
       }`}
     >
       <nav
-        className="section-container flex h-24 items-center justify-between"
+        className="section-container flex h-20 items-center justify-between lg:h-24"
         aria-label="Main navigation"
       >
+        <a
+          href="#home"
+          className="min-w-0 rounded-lg py-2 text-sm font-black tracking-wide text-white focus:outline-none focus:ring-2 focus:ring-cyan-300 lg:hidden"
+          onClick={closeMenu}
+        >
+          CHAKON
+        </a>
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden min-w-0 items-center gap-0 lg:flex xl:gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5 hover:text-cyan-200 xl:px-5 xl:text-base"
+              className="rounded-full px-3 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5 hover:text-cyan-200 xl:px-4 xl:text-base 2xl:px-5"
             >
               {link.label}
             </a>
@@ -95,6 +102,7 @@ function Navbar() {
             className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-xl text-white"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setIsOpen((current) => !current)}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -104,7 +112,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="section-container pb-6 lg:hidden">
+        <div id="mobile-navigation" className="section-container pb-6 lg:hidden">
           <div className="glass-card rounded-3xl p-4">
             {navLinks.map((link) => (
               <a

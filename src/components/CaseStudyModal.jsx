@@ -42,7 +42,7 @@ function CaseStudyModal({ project, onClose }) {
     <AnimatePresence>
       {project && (
         <motion.div
-          className="case-study-backdrop fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto bg-slate-950/90 px-4 py-6 backdrop-blur-md sm:items-center"
+          className="case-study-backdrop fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto bg-slate-950/90 p-2 backdrop-blur-md sm:items-center sm:px-4 sm:py-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby="case-study-title"
@@ -52,7 +52,7 @@ function CaseStudyModal({ project, onClose }) {
           onClick={onClose}
         >
           <motion.article
-            className="glass-card my-auto flex max-h-[calc(100dvh-2rem)] w-full max-w-5xl flex-col overflow-hidden rounded-[1.75rem] sm:max-h-[calc(100dvh-3rem)] sm:rounded-[2rem]"
+            className="glass-card my-auto flex max-h-[calc(100dvh-1rem)] w-full min-w-0 max-w-5xl flex-col overflow-hidden rounded-[1.25rem] sm:max-h-[calc(100dvh-3rem)] sm:rounded-[2rem]"
             initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
@@ -147,7 +147,7 @@ function CaseStudyModal({ project, onClose }) {
               </div>
             </div>
 
-            <footer className="flex shrink-0 flex-wrap items-center justify-end gap-3 border-t border-white/10 bg-slate-900/80 px-5 py-4 backdrop-blur-xl sm:px-7">
+            <footer className="grid shrink-0 gap-3 border-t border-white/10 bg-slate-900/80 px-5 py-4 backdrop-blur-xl sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:px-7">
               {project.githubUrl && (
                 <a href={project.githubUrl} target="_blank" rel="noreferrer" className="secondary-button px-4 py-2 text-xs">
                   GitHub <FaGithub />

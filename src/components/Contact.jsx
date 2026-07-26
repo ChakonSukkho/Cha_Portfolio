@@ -46,16 +46,16 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="section-container py-24">
+    <section id="contact" className="section-container section-spacing">
       <SectionHeading
         eyebrow="Contact"
         title="Let’s connect for software engineering opportunities."
         description="I am open to internship and fresh graduate software engineering, web development, and application support roles."
       />
 
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <motion.div
-          className="glass-card rounded-[2rem] p-7"
+          className="glass-card min-w-0 rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-7"
           initial={{ opacity: 0, x: -28 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
@@ -75,14 +75,14 @@ function Contact() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+                  className="flex min-h-14 min-w-0 items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10 sm:gap-4"
                 >
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200">
                     <Icon />
                   </span>
-                  <span>
+                  <span className="min-w-0">
                     <span className="block text-sm font-semibold text-slate-500">{item.label}</span>
-                    <span className="block break-all font-semibold text-slate-200">{item.value}</span>
+                    <span className="block break-words font-semibold text-slate-200">{item.value}</span>
                   </span>
                 </a>
               );
@@ -92,7 +92,7 @@ function Contact() {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="glass-card rounded-[2rem] p-7"
+          className="glass-card min-w-0 rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-7"
           initial={{ opacity: 0, x: 28 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
@@ -109,7 +109,7 @@ function Contact() {
                 type="text"
                 name="name"
                 placeholder="Your name"
-                className="rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+                className="min-h-12 w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
               />
             </label>
 
@@ -120,7 +120,7 @@ function Contact() {
                 type="email"
                 name="email"
                 placeholder="your.email@example.com"
-                className="rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+                className="min-h-12 w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
               />
             </label>
 
@@ -131,7 +131,7 @@ function Contact() {
                 name="message"
                 rows="6"
                 placeholder="Write your message here..."
-                className="resize-none rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+                className="min-h-36 w-full resize-y rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
               />
             </label>
           </div>

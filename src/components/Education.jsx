@@ -13,7 +13,7 @@ const coursework = [
 
 function Education() {
   return (
-    <section id="education" className="section-container py-24">
+    <section id="education" className="section-container section-spacing">
       <SectionHeading
         eyebrow="Education"
         title="Academic foundation in digital technology and software development."
@@ -21,20 +21,20 @@ function Education() {
       />
 
       <motion.article
-        className="glass-card relative overflow-hidden rounded-[2rem] p-7 sm:p-9"
+        className="glass-card relative min-w-0 overflow-hidden rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-9"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.55 }}
       >
         <div className="absolute -left-10 bottom-0 h-52 w-52 rounded-full bg-blue-600/10 blur-3xl" aria-hidden="true" />
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
+        <div className="relative z-10 grid min-w-0 gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
+          <div className="min-w-0">
             <div className="mb-5 grid h-16 w-16 place-items-center rounded-3xl bg-cyan-300/10 text-3xl text-cyan-200">
               <FaGraduationCap />
             </div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">2023 – 2026</p>
-            <h3 className="mt-3 text-3xl font-black text-white">Diploma in Digital Information</h3>
+            <h3 className="mt-3 text-2xl font-black text-white sm:text-3xl">Diploma in Digital Information</h3>
             <p className="mt-3 text-lg font-semibold text-slate-300">Politeknik Sultan Mizan Zainal Abidin</p>
             <p className="mt-5 inline-flex rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">
               CGPA: 3.94

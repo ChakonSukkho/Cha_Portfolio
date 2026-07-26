@@ -42,7 +42,7 @@ function Skills() {
   const styles = categoryStyles[selectedCategory.title];
 
   return (
-    <section id="skills" className="section-container py-24">
+    <section id="skills" className="section-container section-spacing">
       <SectionHeading
         eyebrow="Tech Stack"
         title="Skills & Tools"
@@ -59,7 +59,7 @@ function Skills() {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActiveCategory(category.title)}
-              className={`rounded-full border px-4 py-2 text-xs font-bold transition sm:px-5 sm:text-sm ${
+              className={`min-h-11 rounded-full border px-4 py-2 text-xs font-bold transition sm:px-5 sm:text-sm ${
                 isActive
                   ? 'border-cyan-300/50 bg-cyan-300/15 text-cyan-100 shadow-glow'
                   : 'border-white/10 bg-white/5 text-slate-400 hover:border-cyan-300/30 hover:text-cyan-200'
@@ -80,8 +80,8 @@ function Skills() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.25 }}
         >
-          <div className="mb-6 flex items-end justify-between gap-5 border-b border-white/10 pb-4">
-            <div>
+          <div className="mb-6 flex min-w-0 items-end justify-between gap-5 border-b border-white/10 pb-4">
+            <div className="min-w-0">
               <h3
                 id={`skills-${selectedCategory.title.replaceAll(' ', '-').toLowerCase()}`}
                 className="text-xl font-black text-white sm:text-2xl"
@@ -93,14 +93,14 @@ function Skills() {
             <span className={`mb-1 hidden h-2.5 w-2.5 shrink-0 rounded-full sm:block ${styles.dot}`} aria-hidden="true" />
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
                 {selectedCategory.skills.map((skill, index) => {
                   const Icon = skill.icon;
 
                   return (
                     <motion.article
                       key={skill.name}
-                      className={`group flex min-h-44 flex-col items-center justify-center rounded-[1.4rem] border border-white/10 bg-slate-900/45 px-3 py-5 text-center backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:shadow-card ${styles.hover}`}
+                      className={`group flex min-h-40 min-w-0 flex-col items-center justify-center rounded-[1.4rem] border border-white/10 bg-slate-900/45 px-3 py-5 text-center backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:shadow-card sm:min-h-44 ${styles.hover}`}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.15 }}

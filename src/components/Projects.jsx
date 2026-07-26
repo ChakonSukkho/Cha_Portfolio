@@ -15,7 +15,7 @@ function Projects() {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="section-container py-24">
+    <section id="projects" className="section-container section-spacing">
       <SectionHeading
         eyebrow="Projects"
         title="Selected landing pages, software, dashboards, automation, and CMS work."
@@ -32,7 +32,7 @@ function Projects() {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActiveFilter(filter)}
-              className={`rounded-full border px-5 py-2 text-sm font-semibold transition ${
+              className={`min-h-11 rounded-full border px-5 py-2 text-sm font-semibold transition ${
                 isActive
                   ? 'border-cyan-300/50 bg-cyan-300/15 text-cyan-100 shadow-glow'
                   : 'border-white/10 bg-white/5 text-slate-300 hover:border-cyan-300/35 hover:text-cyan-100'
@@ -45,7 +45,7 @@ function Projects() {
       </div>
 
       <AnimatePresence mode="popLayout">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid min-w-0 gap-5 sm:grid-cols-2 lg:gap-6 2xl:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} onOpenCaseStudy={setSelectedProject} />
           ))}

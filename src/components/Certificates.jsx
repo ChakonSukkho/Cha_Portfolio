@@ -10,7 +10,7 @@ function CertificateCard({ certificate, index }) {
   return (
     <motion.article
       layout
-      className="glass-card group flex h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-glow"
+      className="glass-card group flex h-full min-w-0 flex-col overflow-hidden rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-glow sm:p-6"
       initial={{ opacity: 0, y: 26 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 18 }}
@@ -79,8 +79,8 @@ function Certificates() {
   };
 
   return (
-    <section id="certificates" className="section-container py-24">
-      <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+    <section id="certificates" className="section-container section-spacing">
+      <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-8">
         <SectionHeading
           eyebrow="Certificates"
           title="Certificates & continuous learning."
@@ -88,7 +88,7 @@ function Certificates() {
           align="left"
         />
 
-        <div className="mb-12 flex flex-wrap gap-2" role="tablist" aria-label="Certificate filters">
+        <div className="mb-8 flex flex-wrap gap-2 lg:mb-12" role="tablist" aria-label="Certificate filters">
           {filters.map((filter) => {
             const count =
               filter === 'All'
@@ -103,7 +103,7 @@ function Certificates() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => changeFilter(filter)}
-                className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition ${
                   isActive
                     ? 'border-cyan-300/40 bg-cyan-300/15 text-cyan-100'
                     : 'border-white/10 bg-white/[0.04] text-slate-400 hover:border-cyan-300/30 hover:text-cyan-100'
@@ -117,7 +117,7 @@ function Certificates() {
       </div>
 
       <AnimatePresence mode="popLayout">
-        <motion.div layout className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div layout className="grid min-w-0 gap-5 sm:grid-cols-2 2xl:grid-cols-3">
           {visibleCertificates.map((certificate, index) => (
             <CertificateCard
               key={`${certificate.title}-${certificate.issuer}`}

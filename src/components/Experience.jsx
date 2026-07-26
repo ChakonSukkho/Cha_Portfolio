@@ -13,7 +13,7 @@ const experiencePoints = [
 
 function Experience() {
   return (
-    <section id="experience" className="section-container py-24">
+    <section id="experience" className="section-container section-spacing">
       <SectionHeading
         eyebrow="Experience"
         title="Real internship experience across development, support, automation, and deployment."
@@ -21,15 +21,15 @@ function Experience() {
       />
 
       <motion.article
-        className="glass-card relative overflow-hidden rounded-[2rem] p-7 sm:p-9"
+        className="glass-card relative min-w-0 overflow-hidden rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-9"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55 }}
       >
         <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-cyan-300/10 blur-3xl" aria-hidden="true" />
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-          <div>
+        <div className="relative z-10 grid min-w-0 gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
+          <div className="min-w-0">
             <div className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-cyan-300/10 text-2xl text-cyan-200">
               <FaBriefcase />
             </div>
@@ -46,14 +46,14 @@ function Experience() {
             {experiencePoints.map((point, index) => (
               <motion.li
                 key={point}
-                className="flex gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 text-slate-300"
+                className="flex min-w-0 gap-3 rounded-3xl border border-white/10 bg-white/[0.035] p-4 text-slate-300 sm:gap-4"
                 initial={{ opacity: 0, x: 26 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
               >
                 <FaCheckCircle className="mt-1 shrink-0 text-cyan-300" />
-                <span className="leading-7">{point}</span>
+                <span className="min-w-0 leading-7">{point}</span>
               </motion.li>
             ))}
           </ul>
